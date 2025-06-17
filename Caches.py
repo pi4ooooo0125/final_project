@@ -72,7 +72,7 @@ class L2Cache(Cache):
     tgts_per_mshr = 12
     write_buffers = 8
 class L3Cache(Cache):
-    assoc = 2
+    assoc = 4
     tag_latency = 20
     data_latency = 20
     response_latency = 20
@@ -80,7 +80,7 @@ class L3Cache(Cache):
     tgts_per_mshr = 12
     write_buffers = 8
     replacement_policy = Param.BaseReplacementPolicy(LFURP(),"Replacement policy")
-    
+
 class IOCache(Cache):
     assoc = 8
     tag_latency = 50
