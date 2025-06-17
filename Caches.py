@@ -46,7 +46,7 @@ from m5.objects import *
 # system-configuration scripts. The values are meant to serve as a
 # starting point, and specific parameters can be overridden in the
 # specific instantiations.
-replacement_policy = Param.BaseReplacementPolicy(LFURP(),"Replacement policy")
+
 class L1Cache(Cache):
     assoc = 2
     tag_latency = 2
@@ -79,7 +79,8 @@ class L3Cache(Cache):
     mshrs = 20
     tgts_per_mshr = 12
     write_buffers = 8
-
+    replacement_policy = Param.BaseReplacementPolicy(LFURP(),"Replacement policy")
+    
 class IOCache(Cache):
     assoc = 8
     tag_latency = 50
